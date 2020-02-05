@@ -40,3 +40,12 @@ if (correctGuess) {
 } else {
     document.write("<p>Sorry, that's not correct. The number was " + randomNumber + "</p>");
 }
+
+/*
+I can compare multiple boolean conditions using && or ||
+&& between variables (age < '35' && age < '40') means both conditions must be true for the value to be returned as true.
+|| between variable (age < '35 || age < '40') means one or the other value must be true for the value to be returned as true.
+*/
+
+
+
