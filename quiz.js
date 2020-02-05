@@ -72,3 +72,8 @@ if ( correct === 5 ) {
 } else {
     document.write("<p><strong>Study harder and you'll do better next time!</strong></p>");
 }
+
+
+
+
+
