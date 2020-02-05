@@ -1,51 +1,74 @@
 /*
-The Random Number Guessing Game 
-Generates a number between 1 and 20
-and gives players 2 attempts with a clue
-to guess the number correctly
+Goal:
+Write a 5 question quiz and grade it.
 */
 
-// assume the player didn't guess correctly
-var correctGuess = false;
+// Answer Count
 
-// generate a number from 1 - 20
-var randomNumber = Math.floor(Math.random() * 20) + 1;
+var correct = 0;
 
-var guess = prompt("I'm thinking of a number between 1 and 20. What is it?")
+alert("Are you ready for a quiz?");
 
-// added to improve my ability to debug
-console.log(randomNumber);
+// Ask Questions
 
-/* test to see if player is
-1. correct
-2. guessed to low
-3. guessed to high
-*/
-
-if (parseInt(guess) === randomNumber ) {
-    correctGuess = true;
-} else if ( parseInt(guess) > randomNumber) {
-    var guessLow = prompt("Your guess was too high, my number is lower than " + guess + ".");
-}    if ( parseInt(guessLow) === randomNumber) {
-    correctGuess = true;
-} else if ( parseInt(guess) < randomNumber) {
-    var guessHigh = prompt("Your guess was too low, my number is higher than " + guess + ".");
-    if ( parseInt(guessHigh) === randomNumber)
-    correctGuess = true;
-}
-
-// test if player is correct or not and display proper message
-if (correctGuess) {
-    document.write("<p>You guessed the number!</p>");
+var answer1 = prompt("What is the last name of the current President of the United States?");
+if ( answer1.toUpperCase() === "TRUMP") {
+    document.write("<p>1. Correct</p>");
+    correct += 1;
+    console.log(correct);
 } else {
-    document.write("<p>Sorry, that's not correct. The number was " + randomNumber + "</p>");
+    document.write("<p>1. Incorrect</p>");
 }
 
-/*
-I can compare multiple boolean conditions using && or ||
-&& between variables (age < '35' && age < '40') means both conditions must be true for the value to be returned as true.
-|| between variable (age < '35 || age < '40') means one or the other value must be true for the value to be returned as true.
-*/
+var answer2 = prompt("What is the last name of the previous President of the United States?");
+if ( answer2.toUpperCase() === "OBAMA") {
+    document.write("<p>2. Correct</p>");
+    correct += 1;
+    console.log(correct);
+} else {
+    document.write("<p>2. Incorrect</p>");
+}
 
+var answer3 = prompt("What is the last name of the current Vice President of the United States?");
+if ( answer3.toUpperCase() === "PENCE") {
+    document.write("<p>3. Correct</p>");
+    correct += 1;
+    console.log(correct);
+} else {
+    document.write("<p>3. Incorrect</p>");
+}
 
+var answer4 = prompt("What is the last name of the previous Vice President of the United States?");
+if ( answer4.toUpperCase() === "BIDEN") {
+    document.write("<p>4. Correct</p>");
+    correct += 1;
+    console.log(correct);
+} else {
+    document.write("<p>4. Incorrect</p>");
+}
 
+var answer5 = prompt("What year is the next Presidential Election?");
+answer5 = parseInt(answer5);
+if ( answer5 === 2020 ) {
+    document.write("<p>5. Correct</p>");
+    correct += 1;
+    console.log(correct);
+} else {
+    document.write("<p>5. Incorrect</p>");
+}
+
+// Add total score
+
+document.write("<p> You got " + correct + " out of 5</p>")
+
+// Awards
+
+if ( correct === 5 ) {
+    document.write("<p><strong> Perfect Score! Great job, you get a GOLD MEDAL!</strong></p>");
+} else if ( correct >= 3 ) {
+    document.write("<p><strong>Well done, you get a Silver Medal!</strong></p>");
+} else if ( correct >= 2 ) {
+    document.write("<p><strong>You earned a Bronze Medal!</strong></p>");
+} else {
+    document.write("<p><strong>Study harder and you'll do better next time!</strong></p>");
+}
